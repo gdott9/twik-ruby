@@ -10,7 +10,7 @@ class Twik
 
   def initialize(privatekey, length: 16, type: :alphanumeric_and_special_chars)
     raise UnknownType.new("type should be one of (#{TYPE.join(', ')})")  unless TYPE.include?(type)
-    raise InvalidLength.new("length should be between 1 and 26") unless (1..26).include?(length)
+    raise InvalidLength.new("length should be between 4 and 26") unless (4..26).include?(length)
 
     self.privatekey = privatekey
     self.length = length
