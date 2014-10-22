@@ -28,6 +28,18 @@ class Twik
         @yaml = YAML.load_file(file.path)
       end
 
+      def ask(prompt)
+        print prompt
+        res = STDIN.noecho(&:gets).chomp
+        puts
+
+        res
+      end
+
+      def masterkey
+        ENV['MASTER_KEY'] || ask('Master key: ')
+      end
+
       def profile
         args['profile'] || 'default'
       end

@@ -15,16 +15,7 @@ class Twik
     end
 
     def run
-      masterkey = ask('Master key: ')
-      puts twik.generate(config.tag, masterkey)
-    end
-
-    def ask(prompt)
-      print prompt
-      res = STDIN.noecho(&:gets).chomp
-      puts
-
-      res
+      puts twik.generate(config.tag, config.masterkey)
     end
   end
 end
