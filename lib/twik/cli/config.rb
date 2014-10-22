@@ -10,6 +10,7 @@ class Twik
 
       def self.default
         {
+          'default_profile' => 'default',
           'profiles' => {
             'default' => {
               'privatekey' => Twik::PrivateKey.generate,
@@ -41,7 +42,7 @@ class Twik
       end
 
       def profile
-        args['profile'] || 'default'
+        args['profile'] || yaml['default_profile'] || 'default'
       end
 
       def options

@@ -12,16 +12,16 @@ class Twik
           opts.separator ''
           opts.separator 'Specific options:'
 
-          opts.on('-l', '--length LENGTH', 'length of generated password (4-26). Default: 16') do |length|
+          opts.on('-l', '--length LENGTH', 'length of generated password (4-26)') do |length|
             options['length'] = length.to_i
           end
 
-          opts.on('-p', '--profile PROFILE', "profile to use. Default: 'default'") do |profile|
+          opts.on('-p', '--profile PROFILE', "profile to use") do |profile|
             options['profile'] = profile
           end
 
           opts.on('-t', '--type TYPE', Twik::TYPE,
-                  "type of password:", "  #{Twik::TYPE.join(', ')}", "  Default: alphanumeric_and_special_chars") do |type|
+                  "type of password:", "  #{Twik::TYPE.join(', ')}") do |type|
             options['type'] = type.to_sym
           end
 
